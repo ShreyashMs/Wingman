@@ -1,6 +1,16 @@
 import React from "react";
-import { Line, Bar } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, PointElement, LineElement } from "chart.js";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+} from "chart.js";
 
 // Register chart.js components
 ChartJS.register(
@@ -16,45 +26,44 @@ ChartJS.register(
 
 const Insights = () => {
   const data = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Days of the week
+    labels: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"], // Days of the week
     datasets: [
       {
-        label: 'Experts Online',
+        label: "Experts Online",
         data: [28, 28, 30, 50, 32, 35, 35], // Data for Experts Online
-        backgroundColor: '#FFE587', // Bar color for Experts Online
-        borderColor: '#FFE587',
+        backgroundColor: "#FFE587", // Bar color for Experts Online
+        borderColor: "#FFE587",
         borderWidth: 1,
         barThickness: 40, // Bar width
-        yAxisID: 'y1', // Linking to right y-axis
-        zIndex: 1, // Bars below the lines
+        yAxisID: "y1", // Linking to right y-axis
       },
       {
-        label: 'Answered',
+        label: "Answered",
         data: [28, 26, 32, 33, 45, 32, 33], // Data for Answered (line chart)
         fill: false,
-        borderColor: '#15B79F', // Line color for Answered
+        borderColor: "#15B79F", // Line color for Answered
         borderWidth: 2,
         tension: 0.9, // Adjust tension for zigzag lines
-        type: 'line',
-        pointStyle: 'circle',
+        type: "line",
+        pointStyle: "circle",
         pointRadius: 0, // Remove points
-        pointBackgroundColor: '#15B79F',
-        yAxisID: 'y2', // Linking to left y-axis
-        zIndex: 2, // Lines above the bars
+        pointBackgroundColor: "#15B79F",
+        yAxisID: "y2", // Linking to left y-axis
+        zIndex: 10, // Lines above the bars
       },
       {
-        label: 'Incoming',
+        label: "Incoming",
         data: [35, 34, 39, 45, 45, 48, 50], // Data for Incoming (line chart)
         fill: false,
-        borderColor: '#8A94A6', // Line color for Incoming
+        borderColor: "#8A94A6", // Line color for Incoming
         borderWidth: 2,
         tension: 0.9, // Adjust tension for zigzag lines
-        type: 'line',
-        pointStyle: 'circle',
+        type: "line",
+        pointStyle: "circle",
         pointRadius: 0, // Remove points
-        pointBackgroundColor: '#8A94A6',
-        yAxisID: 'y2', // Linking to left y-axis
-        zIndex: 2, // Lines above the bars
+        pointBackgroundColor: "#8A94A6",
+        yAxisID: "y2", // Linking to left y-axis
+        zIndex: 10, // Lines above the bars
       },
     ],
   };
@@ -62,27 +71,22 @@ const Insights = () => {
   const options = {
     responsive: true,
     scales: {
-      // Left y-axis for Consultations
-      y: {
+      y1: {
         beginAtZero: false,
-        ticks: {
-          font: {
-            size: 7,
-          },
-        
-        },
+        min:10,
+
         grid: {
-          borderColor: '#E5E7EB',
+          borderColor: "#E5E7EB",
           borderWidth: 1,
         },
-        position: 'left',
+        position: "right",
         title: {
           display: true,
-          text: 'Consultations !!!',
+          text: "EXPERTS ONLINE",
           font: {
             size: 16,
           },
-          color: '#000',
+          color: "#000",
         },
         ticks: {
           font: {
@@ -90,36 +94,31 @@ const Insights = () => {
           },
         },
       },
-      // Right y-axis for Experts Online
-      y1: {
-        beginAtZero: true,
-        ticks: {
-          font: {
-            size: 14,
-          },
-          stepSize: 10, // Custom step size for y-axis on the right
-          callback: function(value) {
-            return value + ' Experts Online';
-          },
-        },
+      y2: {
+        beginAtZero: false,
+        min:10,
         grid: {
-          borderColor: '#E5E7EB',
+          borderColor: "#E5E7EB",
           borderWidth: 1,
         },
-        position: 'right',
+        position: "left",
         title: {
           display: true,
-          text: 'EXPERTS ONLINE',
+          text: "CONSULTATIONS",
           font: {
             size: 16,
           },
-          color: '#000',
+          color: "#000",
         },
         ticks: {
+          // Define custom tick values for the left Y-Axis
+          stepSize: 10,
+          max: 60, // Define the maximum value on the left Y-axis
+          min: 0, // Define the minimum value on the left Y-axis
           font: {
             size: 14,
-            rotate: 90, // Rotate right axis labels vertically
           },
+          
         },
       },
       x: {
@@ -135,10 +134,10 @@ const Insights = () => {
     },
     plugins: {
       legend: {
-        display: false, // Hide the legend
+        display: false,
       },
       tooltip: {
-        enabled: false, // Disable tooltips
+        enabled: false,
       },
     },
   };
@@ -161,7 +160,8 @@ const Insights = () => {
         </div>
 
         {/* Right Section: Placeholder */}
-        <div className="col-span-2 sm:col-span-1 bg-green-600 flex justify-center items-center">
+        <div className="col-span-2 sm:col-span-1 bg-green-600 flex r">
+          <div>VS PAST PERIOD</div>
           <p className="text-white text-xl">More Insights Here</p>
         </div>
       </div>
