@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Glance from "./Glance";
 import Insights from "./insights";
+import Orders from "./orders";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -32,6 +33,7 @@ const Header = () => {
 
       <Glance />
       <Insights />
+      <Orders/>
     </header>
   );
 };
