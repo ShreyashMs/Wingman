@@ -10,20 +10,19 @@ const Drawer = () => {
   const IconButton = ({ icon, ariaLabel, onClick, isClicked }) => {
     return (
       <button
-        className={`flex justify-center items-center rounded-lg p-2 ${
+        className={`flex justify-center items-center rounded-lg p-1 ${
           isClicked ? "bg-[#FFFFFF]" : "bg-transparent"
         }`}
         aria-label={ariaLabel}
         onClick={onClick}
         type="button"
-        style={{ width: "50px", height: "50px" }} // Set the desired width and height
       >
         {/* Icon color: changes to blue if clicked, default is white */}
         <span
           style={{
             color: isClicked ? "#115E56" : "#CCFBEF", // Adjust the clicked state color
-            fontSize: "24px", // Adjust icon size
           }}
+          className={`text-[1rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[1.8rem]`}
         >
           {icon}
         </span>
@@ -60,22 +59,22 @@ const Drawer = () => {
   };
 
   return (
-    <div className="h-full bg-[#115E56] shadow-lg pb-10">
+    <div className="h-screen py-4 bg-[#115E56] px-1 shadow-lg fixed z-20 flex flex-col">
       {/* Logo Button */}
       <button
-        className="flex justify-center items-center p-1 w-full"
+        className="flex justify-center items-center w-full"
         type="button"
         aria-label="Navigate to Home"
       >
         <img
           src="/assets/Logo.png"
           alt="Brand Logo"
-          className="h-[65.2px] mt-5 rounded border-b-[1px] mb-6 pb-5 border-b-[#134E48]"
+          className="h-[40.2px] sm:h-[50.2px] md:h-[62.2px] lg:h-[62.2px] rounded border-b-[1px] pb-5 border-b-[#134E48]"
         />
       </button>
-      <div className="h-[50rem] pb-7">
-        {/* Navigation Buttons (First three buttons only) */}
-        <div className="flex flex-col items-center space-y-4 h-full p-4">
+      {/* Main Buttons Container */}
+      <div className="flex-grow flex flex-col justify-between">
+        <div className="flex flex-col items-center space-y-3">
           {buttons.slice(0, 3).map((button, index) => (
             <IconButton
               key={index}
@@ -86,9 +85,7 @@ const Drawer = () => {
             />
           ))}
         </div>
-
-        {/* Settings Button (last one) */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-6  className={`text-[1rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[1.8rem]`">
           <IconButton
             icon={buttons[buttons.length - 1].icon} // Pass the icon directly here
             ariaLabel={buttons[buttons.length - 1].ariaLabel}
