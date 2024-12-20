@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { GiNetworkBars } from "react-icons/gi";
 
 ChartJS.register(
   CategoryScale,
@@ -26,13 +27,13 @@ const WeeklyInsights = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setBarThickness(5);
+        setBarThickness(10);
         setFontSize(5);
       } else if (window.innerWidth < 1024) {
         setBarThickness(20);
         setFontSize(7);
       } else {
-        setBarThickness(30);
+        setBarThickness(25);
         setFontSize(9);
       }
     };
@@ -112,14 +113,15 @@ const WeeklyInsights = () => {
         right: 20,
       },
     },
-    barPercentage: 0, 
-    categoryPercentage: 0.1, 
+    barPercentage: 0,
+    categoryPercentage: 0.1,
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full ">
       <div className="h-full w-full flex flex-row">
-        <div className="text-[0.8rem] text-[#667085] px-3 sm:text-[1rem] md:text-[1.5rem] lg:text-[1.55rem] font-medium flex justify-center items-center">
+        <div className="text-[0.5rem] ml-3 text-[#667085] px-3 gap-1 sm:text-[0.rem] md:text-[0.7rem] lg:text-[0.7rem] font-medium flex justify-center items-center">
+          <GiNetworkBars />{" "}
           VS PAST PERIOD
         </div>
       </div>

@@ -96,7 +96,7 @@ const Orders = () => {
   ];
 
   const columns = [
-    { name: "Project", key: "project" },
+    { name: "Project Name", key: "project" },
     { name: "Date", key: "date" },
     { name: "Time Spent", key: "timeSpent" },
     { name: "Order Value", key: "orderValue" },
@@ -229,7 +229,7 @@ const Orders = () => {
   return (
     <div className="flex flex-col mr-5 ml-2 justify-center items-center">
       <div className="h-full w-full py-2 px-2 flex flex-row items-center justify-between">
-        <div className="text-[1.1rem] sm:text-[1.5rem] md:text-[2remm] lg:text-[2.5rem] font-normal flex justify-center text-black items-center">
+        <div className="text-[1.1rem] sm:text-[1.5rem] md:text-[2remm] lg:text-[2rem] font-normal flex justify-center text-black items-center">
           Orders
         </div>
         <div className="flex text-[0.6rem] text-black border-none sm:text-[0.8rem] md:text-[0.8rem] justify-center items-center border rounded px-5">
@@ -255,7 +255,7 @@ const Orders = () => {
               {columns.map((column) => (
                 <th
                   key={column.key}
-                  className={`border sm:px-4 py-1 px-1 sm:py-4 text-[0.6rem] sm:text-[1rem] font-normal cursor-pointer ${
+                  className={`border sm:px-4  text-[#667085] py-1 px-1 sm:py-4 text-[0.6rem] sm:text-[0.7rem] font-normal cursor-pointer ${
                     column.key !== "actions" ? "text-black" : "text-blue-500"
                   }`}
                   onClick={() => requestSort(column.key)}
@@ -273,40 +273,42 @@ const Orders = () => {
             </tr>
           </thead>
           <tbody>
-  {currentRows.map((row, index) => (
-    <tr key={index}>
-      {columns.map((column) => (
-        <td
-          key={column.key}
-          className={`border px-3 sm:px-4 sm:py-1 py-1 text-[0.6rem] sm:text-[0.8rem] md:px-3 md:py-3 font-normal text-center ${
-            column.key === "actions" ? "text-blue-500" : "text-black"
-          }`}
-        >
-          {column.key === "actions" ? (
-            <button
-              className="text-blue-500 hover:underline"
-              onClick={toggleChat}
-            >
-              View Chat ↗
-            </button>
-          ) : column.key === "project" ? (
-            <span className="flex items-center">
-              <span className="h-4 bg-gray-200 w-4 mr-2 rounded-lg">
-                <img src={row[column.key].icon} />
-              </span>
-              {row[column.key].name}
-            </span>
-          ) : column.key === "commission" ? (
-            <span className="font-bold">{row[column.key]}</span> // Make commission bold
-          ) : (
-            row[column.key]
-          )}
-        </td>
-      ))}
-    </tr>
-  ))}
-</tbody>
-
+            {currentRows.map((row, index) => (
+              <tr key={index}>
+                {columns.map((column) => (
+                  <td
+                    key={column.key}
+                    className={`border px-3 sm:px-4 sm:py-1 py-1 text-[0.6rem] sm:text-[0.8rem] md:px-3 md:py-3 font-normal text-center ${
+                      column.key === "actions" ? "text-blue-500" : "text-black"
+                    }`}
+                  >
+                    {column.key === "actions" ? (
+                      <button
+                        className="text-blue-500 hover:underline"
+                        onClick={toggleChat}
+                      >
+                        View Chat ↗
+                      </button>
+                    ) : column.key === "project" ? (
+                      <span className="flex items-center">
+                        <span className="h-4 bg-gray-200 w-4 mr-2 rounded-lg">
+                          <img
+                            src={row[column.key].icon}
+                            alt={row[column.key].icon}
+                          />
+                        </span>
+                        {row[column.key].name}
+                      </span>
+                    ) : column.key === "commission" ? (
+                      <span className="font-bold">{row[column.key]}</span> // Make commission bold
+                    ) : (
+                      row[column.key]
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
 

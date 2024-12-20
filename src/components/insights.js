@@ -180,18 +180,19 @@ const Insights = () => {
   return (
     <div className="flex flex-col w-full justify-center items-center">
       <div className="h-full w-full p-3 flex flex-row items-center justify-between">
-        <div className="text-[1rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-normal flex justify-center text-black items-center">
+        <div className="text-[1.1rem] sm:text-[1.5rem] md:text-[2remm] lg:text-[2rem] font-normal flex justify-center text-black items-center">
           Insights
         </div>
       </div>
       <div className="flex flex-col sm:flex-row md:flex-row w-full mr-5 gap-2 sm:mr-0">
         {/* Left Section */}
         <div className="sm:p-8 rounded-lg h-44 w-full sm:w-[60%] sm:h-auto">
+          <div className="text-[0.5rem] text-[#667085] ml-4 px-3 gap-1 sm:text-[0.8rem] md:text-[1.0.8rem] lg:text-[0.85rem] font-medium flex  items-center"></div>
           <Bar data={data} options={options} />
         </div>
 
         {/* Right Section */}
-        <div className="flex w-full sm:w-[40%] overflow-hidden p-2 gap-2">
+        <div className="flex w-full sm:w-[40%] overflow-hidden p-2 gap-3">
           <div className="rounded-xl w-[40%]">
             <WeeklyInsights />
           </div>
