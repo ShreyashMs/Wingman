@@ -186,7 +186,7 @@ const Insights = () => {
           Insights
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row md:flex-row w-full mr-5 gap-2 sm:mr-0">
+      <div className="flex flex-col sm:flex-col md:flex-row w-full mr-5 gap-2 sm:mr-0">
         {/* Left Section */}
         <div className="sm:p-8 rounded-lg h-44 w-full sm:w-[60%] sm:h-auto">
           <div className="text-[0.5rem] text-[#667085] ml-4 px-3 gap-1 sm:text-[0.8rem] md:text-[1.0.8rem] lg:text-[0.85rem] font-medium flex  items-center"></div>
