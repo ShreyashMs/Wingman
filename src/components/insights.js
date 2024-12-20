@@ -10,6 +10,7 @@ import {
   Legend,
   PointElement,
   LineElement,
+  LineController,
 } from "chart.js";
 import { BsChatFill } from "react-icons/bs";
 import { PiTrendUpBold } from "react-icons/pi";
@@ -23,7 +24,8 @@ ChartJS.register(
   Tooltip,
   Legend,
   PointElement,
-  LineElement
+  LineElement,
+  LineController
 );
 
 const Insights = () => {

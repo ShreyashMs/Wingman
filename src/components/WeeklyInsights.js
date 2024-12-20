@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  LineController,
 } from "chart.js";
 import { GiNetworkBars } from "react-icons/gi";
 
@@ -17,7 +18,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  LineController
 );
 
 const WeeklyInsights = () => {
@@ -121,8 +123,7 @@ const WeeklyInsights = () => {
     <div className="flex flex-col w-full ">
       <div className="h-full w-full flex flex-row">
         <div className="text-[0.5rem] ml-3 text-[#667085] px-3 gap-1 sm:text-[0.rem] md:text-[0.7rem] lg:text-[0.7rem] font-medium flex justify-center items-center">
-          <GiNetworkBars />{" "}
-          VS PAST PERIOD
+          <GiNetworkBars /> VS PAST PERIOD
         </div>
       </div>
       <div className="flex flex-col w-full sm:mr-0">
