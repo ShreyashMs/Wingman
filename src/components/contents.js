@@ -13,9 +13,9 @@ const Contents = () => {
   ];
 
   return (
-    <header className="border-b-2 ml-10 sm:ml-14 md:ml-16 lg:ml-20 text-white top-0 left-16 0 h-full w-full">
+    <header className="border-b-2 ml-8 sm:ml-14 md:ml-16 lg:ml-20 text-white top-0 left-16 0 h-full w-full">
       {/* header */}
-      <div className="flex w-full justify-start overflow-hidden px-2 gap-2 py-6 border-b-[2px] flex-row items-center ">
+      <div className="flex w-full justify-start overflow-hidden px-2 gap-2 py-2 border-b-[2px] flex-row items-center">
         {tabs.map((tab, index) => (
           <button
             key={index}

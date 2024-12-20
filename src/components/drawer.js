@@ -22,7 +22,7 @@ const Drawer = () => {
           style={{
             color: isClicked ? "#115E56" : "#CCFBEF", // Adjust the clicked state color
           }}
-          className={`text-[1rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[1.8rem]`}
+          className={`text-[1rem] sm:text-[1.5rem] md:text-[1.6rem] lg:text-[1.6rem]`}
         >
           {icon}
         </span>
