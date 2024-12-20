@@ -30,18 +30,18 @@ ChartJS.register(
 
 const Insights = () => {
   const [barThickness, setBarThickness] = useState(10);
-  const [fontSize, setFontSize] = useState();
+  const [fontSize, setFontSize] = useState(10);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setBarThickness(10);
-        setFontSize(5);
+        setBarThickness(18);
+        setFontSize(8);
       } else if (window.innerWidth < 1024) {
-        setBarThickness(20);
-        setFontSize(10);
+        setBarThickness(23);
+        setFontSize(12);
       } else {
-        setBarThickness(30);
+        setBarThickness(45);
         setFontSize(14);
       }
     };
@@ -186,7 +186,7 @@ const Insights = () => {
           Insights
         </div>
       </div>
-      <div className="flex flex-col sm:flex-col md:flex-row w-full mr-5 gap-2 sm:mr-0">
+      <div className="flex flex-col sm:flex-row md:flex-row w-full mr-5 gap-2 sm:mr-0">
         {/* Left Section */}
         <div className="sm:p-8 rounded-lg h-44 w-full sm:w-[60%] sm:h-auto">
           <div className="text-[0.5rem] text-[#667085] ml-4 px-3 gap-1 sm:text-[0.8rem] md:text-[1.0.8rem] lg:text-[0.85rem] font-medium flex  items-center"></div>
